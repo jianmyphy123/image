@@ -1,0 +1,153 @@
+@border-color: #eee;
+
+.task-view {
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  border-radius: 5px;
+  transition: box-shadow .4s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    background: #fafafa;
+  }
+
+  .image-view {
+    position: relative;
+    border-bottom: 1px solid @border-color;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      padding-top: 100%;
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .image-options {
+    border-bottom: 1px solid @border-color;
+
+    .color-number {
+      padding: 0 8px;
+    }
+
+    input[type="number"] {
+      width: 24px;
+      text-align: right;
+      margin-left: 5px;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        display: none;
+      }
+    }
+  }
+
+  .image-profile {
+    font-size: 12px;
+  }
+
+  .image-sizes {
+    padding: 6px 8px;
+  }
+
+  &.-PENDING {
+    .traffic {
+      color: #FDD835;
+    }
+  }
+
+  &.-PROCESSING {
+    .traffic {
+      transform: scale(2);
+    }
+  }
+
+  &.-DONE {
+    .traffic {
+      color: #36CD40;
+    }
+  }
+
+  &.-FAIL {
+    .traffic {
+      color: #e36;
+    }
+  }
+
+  &:hover .image-view-menu {
+    background: rgba(255, 255, 255, .9);
+  }
+}
+
+.image-view-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: rgba(255, 255, 255, .3);
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 12px;
+  transition: background .4s;
+
+  > span,
+  > a {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .__center {
+    flex: 1;
+  }
+
+  .save-btn {
+    height: 30px;
+    flex-direction: column;
+
+    .icon {
+      flex: 1;
+      font-size: 18px;
+    }
+  }
+
+  .close {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    transition: .1s;
+    color: #555;
+    border-radius: 0 0 0 5px;
+
+    &:hover {
+      background-color: #c36;
+      color: #fff;
+    }
+  }
+
+  .traffic {
+    font-size: 10px;
+    color: transparent;
+    transition: .2s;
+    transition-property: transform;
+
+    .icon {
+      display: block;
+    }
+  }
+}

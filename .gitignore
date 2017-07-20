@@ -1,0 +1,5 @@
+dist
+lib
+htdocs
+node_modules
+npm-debug*

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "strict": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    // "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "outDir": "./lib/",
+    "skipLibCheck": true
+  },
+  "include": [
+    "modules/**/*",
+    "types/**/*"
+  ]
+}

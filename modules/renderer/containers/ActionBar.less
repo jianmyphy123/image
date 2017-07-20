@@ -1,0 +1,61 @@
+.action-bar {
+  position: fixed;
+  display: flex;
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+  z-index: 100;
+
+  button {
+    background: none;
+    border: 0;
+    outline: none;
+    width: 80px;
+
+    .icon, span {
+      transition: all .2s;
+    }
+
+    &:disabled {
+      .icon, span {
+        color: #ccc;
+      }
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+
+      &:hover {
+        .icon, span {
+          color: #000;
+        }
+      }
+    }
+
+    .icon {
+      height: 20px;
+      width: 20px;
+      margin: 2px 0;
+      color: #666;
+    }
+
+    span {
+      display: block;
+      color: #888;
+    }
+  }
+
+  .has-update {
+    span, .icon {
+      color: #f60;
+    }
+  }
+
+  .tooltip {
+    top: 5px;
+  }
+}

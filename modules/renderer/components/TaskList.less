@@ -1,0 +1,60 @@
+@keyframes task-empty {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 60px;
+
+  .task-view {
+    flex-basis: 240px;
+    margin: 10px;
+  }
+}
+
+.task-empty {
+  display: block;
+  color: #ccc;
+  text-align: center;
+  padding: 40px;
+  padding-top: 200px;
+  font-size: 30px;
+
+  > span {
+    animation: task-empty ease .2s;
+    display: inline-block;
+  }
+}
+
+.task-enter {
+  opacity: 0.01;
+  transform: scale(1.05);
+}
+
+.task-enter.task-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s;
+  transition-property: opacity, transform;
+}
+
+.task-leave {
+  opacity: 1;
+}
+
+.task-leave.task-leave-active {
+  opacity: 0.01;
+  transform: scale(1.05);
+  transition: .1s;
+  transition-property: opacity, transform;
+}
+
